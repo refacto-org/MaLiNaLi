@@ -5,7 +5,10 @@ nllb propose déjà le "Nigerian Fulfulde" et peut être enrichi avec le pular/f
 
 Voici un article détaillé sur comment ajouter une langue sur ce modèle puis l'exposer : 
 https://cointegrated.medium.com/how-to-fine-tune-a-nllb-200-model-for-translating-a-new-language-a37fc706b865
-L'arti 
+
+  - https://colab.research.google.com/drive/1bayEaw2fz_9Mhg9jFFZhrmDlQlBj1YZf?usp=sharing&authuser=1#scrollTo=hag683KM2qxZ
+  -  fula https://colab.research.google.com/drive/12KFs2v1WZwTEg733In0RphFBAw0muY64#scrollTo=ahPBT-vt_c91
+
 
 If the Colab instance has shut down, you can always load it back from the Google drive where you have saved it
 
@@ -14,3 +17,4 @@ model_load_name = '/gd/MyDrive/models/nllb-fra-fuf-v1'
 model = AutoModelForSeq2SeqLM.from_pretrained(model_load_name).cuda()
 tokenizer = NllbTokenizer.from_pretrained(model_load_name)
 fix_tokenizer(tokenizer)
+

@@ -1,47 +1,26 @@
 state-of-the-art accuracy (37.5 in terms of BLEU score)
 
-https://github.com/microsoft/onnxruntime-inference-examples/issues/295
-please refer to https://onnxruntime.ai/docs/get-started/with-java.html
-and example code: https://github.com/microsoft/onnxruntime/blob/main/java/src/test/java/ai/onnxruntime/InferenceTest.java
-
-You can also convert t5 model to BeamSeach, GreedySearch or sampling:
-https://github.com/microsoft/onnxruntime/blob/main/onnxruntime/python/tools/transformers/convert_generation.py
-That might be easier if you do not want to code the generation part. Run python -m onnxruntime.transformers.convert_generation --help for the usage of the tool.
+- finetuning nllb (see nllb.md)
 
 
-
-
-tensorflow tts ? 
-
-all in one ? https://github.com/d-markey/azure_cosmosdb
 
 exporting ONNX model for dart is not so simple : https://github.com/neuml/txtai/blob/master/examples/18_Export_and_run_models_with_ONNX.ipynb
-example T5 ONNX in python : https://github.com/abelriboulot/onnxt5/blob/master/onnxt5/models.py
 
-text2speech
-https://github.com/csdcorp/speech_to_text
 
-https://colab.research.google.com/drive/1bayEaw2fz_9Mhg9jFFZhrmDlQlBj1YZf?usp=sharing&authuser=1#scrollTo=hag683KM2qxZ
-
-watch also : https://huggingface.co/DigitalUmuganda
-watch https://huggingface.co/Tamazight-NLP
-TODO - attention aux sauts de ligne script dart
-
-model asr french : jonatasgrosman/wav2vec2-large-xlsr-53-french
-
-other nmt approach using kera for tf lite https://github.com/jiraiyajr98/Android-Tensorflow-Lite-Language-Translator-NMT/tree/master
-
-ABOUT PPRETRAIN
-castorini/afriberta_small - https://huggingface.co/castorini/afriberta_small/tree/main - 333 mb pytorch.bin
-afriteva for pretraining, sh script here : 
-https://github.com/castorini/AfriTeVa-keji
-
-OR
-
-pre-training and fine-tuning T5-style models - https://github.com/PiotrNawrot/nanoT5
-  - C4 dataset format
-
-https://huggingface.co/castorini/afriteva_small -> t5 !
+NMT
+- openNMT (tf lite export is dysfunctional see [OpenNMT/OpenNMT-tf] Issue #1005)
+- marianNMT (install fail - finetune irrelevant since no fula)
+- joeyNMT (export to what ?)
+- nmit (not tried, install seems tricky)
+  - https://github.com/microsoft/inmt#training-mt-models
+- tensorflow/kera (not tried)
+  - other nmt approach using kera for tf lite https://github.com/jiraiyajr98/Android-Tensorflow-Lite-Language-Translator-NMT/tree/master
+- T5
+  - finetuning
+  - export to ONNX
+  - serve using flutter foonx \°/
+  - see t5.md
+   
 
 # 2024 
 
@@ -52,9 +31,13 @@ Seulement c'est une galère pas possible à installer...
 J'ai testé un modèle openNMT qui devrait fonctionner sur tf-lite, mais il a des ratés et l'issue est au point mort.
 J'envisage de fine-tune un modèle léger comme t5 pour 
 
+why consider  onnx
+- https://cloudblogs.microsoft.com/opensource/2023/02/08/performant-on-device-inferencing-with-onnx-runtime/
+
+
 ## 2024 janvier 
 
-leave offline until openNMT answers : https://github.com/OpenNMT/OpenNMT-tf/issues/1005
+leave openNMT until answers : https://github.com/OpenNMT/OpenNMT-tf/issues/1005
 
 Extending OpenNMT’s TensorFlow Lite to Include Transformer Models - https://apps.dtic.mil/sti/pdfs/AD1144269.pdf
 

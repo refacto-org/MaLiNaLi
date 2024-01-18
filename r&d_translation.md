@@ -8,6 +8,4 @@
 - [M2M](https://huggingface.co/facebook/m2m100_418M)
 - NLLB-200 - facebook - better !
 
-
-
 ? https://github.com/joeynmt/joeynmt
