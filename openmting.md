@@ -15,7 +15,6 @@ onmt-main --model_type TransformerBase \
     --output_dir ~/Downloads/tflite-out2
 ```
 
-
 -- 1st averaging (just in case)
 ```bash
 onmt-main \

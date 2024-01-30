@@ -1,12 +1,19 @@
 > MaLiNaLi_fulani
 
 # TODOs
-- serving nllb in azure
-- forking a sample repo to try it
+- serving nllb 
+  - https://huggingface.co/spaces/flutter-painter/nllb-fra-fuf-v2
+  - https://github.com/slone-nlp/nllb-docker-demo
+  - https://learn.microsoft.com/en-us/azure/container-instances/container-instances-tutorial-prepare-acr
+- forking a sample http repo to try it
+- serving openNMT in docker ?  
+  - yes just follow the example/serving and put this in hugg face
+  - https://github.com/tensorflow/serving
 
-## translation
+## translation with t5
 - T5 pretraining ?
 - T5 finetuning
+  - https://colab.research.google.com/drive/13ht-0F8NPLHvTvkoEeOiGbFwIfqeUZ6q
 - T5 ONNX learn how to serve it in flutter
 
 ## speech
@@ -17,7 +24,6 @@
 - all in one ? https://github.com/d-markey/azure_cosmosdb
 - evolving & integrating vocal message - https://github.com/weebi-com/vocal_message
 - adding crowdscouring into TalkBridge
-
 
 # after
 - text2speech

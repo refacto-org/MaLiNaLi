@@ -2,14 +2,34 @@ state-of-the-art accuracy (37.5 in terms of BLEU score)
 
 - finetuning nllb (see nllb.md)
 
+- "nllbfrafuf.azurecr.io"
+
+az container show --resource-group myResourceGroup --name nllb --query instanceView.state
+az container show --resource-group myResourceGroup --name nllbfrafuf --query ipAddress.fqdn
+
+-- login registry
+az acr login --name nllbfrafuf
+-- list repos
+az acr repository list --name nllbfrafuf --output table
+-- list tags for a repo
+az acr repository show-tags --name nllbfrafuf --repository nllb --output table
+
+docker run nllbfrafuf.azurecr.io/nllb:v1
+
+cawoyel ? b50cfaca1d0.azurecr.io
+
+- ovh 200 € Valide jusqu'au 18 février 2024 15:44
+- faut Colab Pro+ à 50€/mois
 
 
 exporting ONNX model for dart is not so simple : https://github.com/neuml/txtai/blob/master/examples/18_Export_and_run_models_with_ONNX.ipynb
 
 
+
 NMT
-- openNMT (tf lite export is dysfunctional see [OpenNMT/OpenNMT-tf] Issue #1005)
-- marianNMT (install fail - finetune irrelevant since no fula)
+- openNMT (tf lite export see [OpenNMT/OpenNMT-tf] Issue #1005)
+  - but yields poor results
+- marianNMT (install fail - finetune seems irrelevant since no fula)
 - joeyNMT (export to what ?)
 - nmit (not tried, install seems tricky)
   - https://github.com/microsoft/inmt#training-mt-models
@@ -18,9 +38,8 @@ NMT
 - T5
   - finetuning
   - export to ONNX
-  - serve using flutter foonx \°/
+  - serve using flutter fonnx \°/
   - see t5.md
-   
 
 # 2024 
 
@@ -31,7 +50,7 @@ Seulement c'est une galère pas possible à installer...
 J'ai testé un modèle openNMT qui devrait fonctionner sur tf-lite, mais il a des ratés et l'issue est au point mort.
 J'envisage de fine-tune un modèle léger comme t5 pour 
 
-why consider  onnx
+why consider onnx ?
 - https://cloudblogs.microsoft.com/opensource/2023/02/08/performant-on-device-inferencing-with-onnx-runtime/
 
 
